@@ -158,7 +158,7 @@ require __DIR__ . "/app/main.php";
   .hero-content { position: relative; z-index: 2; max-width: 800px; }
 
   .hero-greeting {
-    font-size: 16px;
+    font-size: 20px;
     color: var(--muted);
     margin-bottom: 12px;
     letter-spacing: 0.02em;
@@ -428,6 +428,15 @@ require __DIR__ . "/app/main.php";
   }
   .portfolio-cta strong { color: var(--accent); }
 
+  .portfolio-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
   /* ── CONTACT ── */
   .contact { background: var(--bg2); }
   .contact-grid {
@@ -558,12 +567,9 @@ require __DIR__ . "/app/main.php";
     <div class="hero-orb"></div>
     <img src="storage/myprofile.png" alt="Profile Photo" class="profile-img">
   </div>
-  <!-- <div class="hero-orb"> 
-  </div>
-  <img src="storage/profile.png" alt="Profile Photo">  -->
   <div class="hero-content">
     <div class="hero-badge"><div class="badge-dot"></div> Available for projects</div>
-    <div class="hero-greeting">Hello! I'm Aliza 👋</div>
+    <div class="hero-greeting">Hello! I'm Aliza!</div>
     <h1 class="hero-name">Full-stack<br>Web Developer</h1>
     <p class="hero-title">Building responsive websites & dynamic web apps</p>
     <p class="hero-desc">Self-taught developer from Antique, Philippines. I craft clean, functional digital experiences — from pixel-perfect front-ends to robust back-end systems.</p>
@@ -644,94 +650,229 @@ require __DIR__ . "/app/main.php";
 <!-- PORTFOLIO -->
 <section class="portfolio" id="portfolio">
   <div class="section-eyebrow">My Work</div>
-  <h2 class="section-title">Selected Projects</h2>
-  <div class="portfolio-grid">
-    <div class="portfolio-card fade-in">
-      <div class="portfolio-thumb portfolio-thumb-1">
-        <span class="thumb-label">Add your screenshot</span>
-      </div>
-      <div class="portfolio-body">
-        <div class="portfolio-tags">
-          <span class="ptag">PHP</span>
-          <span class="ptag">MySQL</span>
-          <span class="ptag">Bootstrap</span>
+  <!-- Online Web Application Projects -->
+  <div style="margin-bottom:50px">
+    <h2 class="section-title">Online Web Application Projects</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-card fade-in">
+        <div class="portfolio-thumb portfolio-thumb-1">
+          <span class="thumb-label">Add your screenshot</span>
         </div>
-        <h3>Project Name Here</h3>
-        <p>Short description of what this project does and the problem it solves.</p>
-        <a href="#" class="portfolio-link">View Project →</a>
+        <div class="portfolio-body">
+          <div class="portfolio-tags">
+            <span class="ptag">PHP</span>
+            <span class="ptag">MySQL</span>
+            <span class="ptag">Bootstrap</span>
+          </div>
+          <h3>DENR Forestry Licensing Management System (eFLMS)</h3>
+          <p>An online web application designed to streamline the application, evaluation, and issuance of forestry permits and licenses. Built using PHP, Bootstrap, and SQL to ensure secure document tracking and efficient workflows for environmental regulatory compliance.</p>
+          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
+        </div>
+      </div>
+      <div class="portfolio-card fade-in" style="transition-delay:0.1s">
+        <div class="portfolio-thumb portfolio-thumb-2">
+          <span class="thumb-label">Add your screenshot</span>
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags">
+            <span class="ptag">PHP</span>
+            <span class="ptag">MySQL</span>
+            <span class="ptag">Bootstrap</span>
+          </div>
+          <h3>Family Planning Management Information System (eFPMIS)</h3>
+          <p>A cloud-based healthcare platform that tracks family planning methods, patient consultations, and medical inventory. Utilizes a robust SQL database and a responsive PHP/Bootstrap frontend to provide healthcare workers with real-time analytics and patient tracking.</p>
+          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
+        </div>
+      </div>
+      <div class="portfolio-card fade-in" style="transition-delay:0.2s">
+        <div class="portfolio-thumb portfolio-thumb-3">
+          <span class="thumb-label">Add your screenshot</span>
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags">
+            <span class="ptag">PHP</span>
+            <span class="ptag">MySQL</span>
+            <span class="ptag">Bootstrap</span>
+          </div>
+          <h3>Resident and Profiling Management Information System (eRPMIS)</h3>
+          <p>A comprehensive community management portal engineered to digitize local resident demographics, certification requests, and profiling data. Features a secure PHP backend and dynamic Bootstrap interface for fast data retrieval and seamless community profiling.</p>
+          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
+        </div>
       </div>
     </div>
-    <div class="portfolio-card fade-in" style="transition-delay:0.1s">
-      <div class="portfolio-thumb portfolio-thumb-2">
-        <span class="thumb-label">Add your screenshot</span>
-      </div>
-      <div class="portfolio-body">
-        <div class="portfolio-tags">
-          <span class="ptag">WordPress</span>
-          <span class="ptag">CSS</span>
+    <div class="portfolio-grid">
+      <div class="portfolio-card fade-in">
+        <div class="portfolio-thumb portfolio-thumb-1">
+          <span class="thumb-label">Add your screenshot</span>
         </div>
-        <h3>Project Name Here</h3>
-        <p>Short description of what this project does and the problem it solves.</p>
-        <a href="#" class="portfolio-link">View Project →</a>
+        <div class="portfolio-body">
+          <div class="portfolio-tags">
+            <span class="ptag">PHP</span>
+            <span class="ptag">MySQL</span>
+            <span class="ptag">Bootstrap</span>
+          </div>
+          <h3>Rose Furniture Management System (eRFMS)</h3>
+          <p>An e-commerce and inventory management solution tailored for custom and retail furniture businesses. It integrates a secure SQL database for real-time stock monitoring with an intuitive PHP and Bootstrap web app for seamless customer ordering and sales tracking.</p>
+          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
+        </div>
+      </div>
+      <div class="portfolio-card fade-in" style="transition-delay:0.1s">
+        <div class="portfolio-thumb portfolio-thumb-2">
+          <span class="thumb-label">Add your screenshot</span>
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags">
+            <span class="ptag">PHP</span>
+            <span class="ptag">MySQL</span>
+            <span class="ptag">Bootstrap</span>
+          </div>
+          <h3>Room and Equipment Booking Management System (eREBooking)</h3>
+          <p>A centralized online scheduling utility that automates facility reservations and equipment lending processes. Developed with PHP and SQL to handle conflict-free calendar booking and user notifications via a responsive Bootstrap frontend.</p>
+          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
+        </div>
+      </div>
+      <div class="portfolio-card fade-in" style="transition-delay:0.2s">
+        <div class="portfolio-thumb portfolio-thumb-3">
+          <span class="thumb-label">Add your screenshot</span>
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags">
+            <span class="ptag">PHP</span>
+            <span class="ptag">MySQL</span>
+            <span class="ptag">Bootstrap</span>
+          </div>
+          <h3>Library Management System</h3>
+          <p>A digital repository platform created to track book inventories, manage student loans, and calculate overdue penalties. Combines PHP logic and SQL relational tables to provide librarians and members with an automated, easy-to-navigate catalog search.</p>
+          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
+        </div>
       </div>
     </div>
-    <div class="portfolio-card fade-in" style="transition-delay:0.2s">
-      <div class="portfolio-thumb portfolio-thumb-3">
-        <span class="thumb-label">Add your screenshot</span>
-      </div>
-      <div class="portfolio-body">
-        <div class="portfolio-tags">
-          <span class="ptag">JavaScript</span>
-          <span class="ptag">PHP</span>
+    <div class="portfolio-grid">
+      <div class="portfolio-card fade-in">
+        <div class="portfolio-thumb portfolio-thumb-1">
+          <span class="thumb-label">Add your screenshot</span>
         </div>
-        <h3>Project Name Here</h3>
-        <p>Short description of what this project does and the problem it solves.</p>
-        <a href="#" class="portfolio-link">View Project →</a>
+        <div class="portfolio-body">
+          <div class="portfolio-tags">
+            <span class="ptag">PHP</span>
+            <span class="ptag">MySQL</span>
+            <span class="ptag">Bootstrap</span>
+          </div>
+          <h3>Technical Support Management System (TS TechSupport)</h3>
+          <p>An online IT helpdesk and ticketing platform designed to manage technical assistance requests. Built using PHP and Bootstrap to route user issues, monitor resolution times, and maintain an organized SQL knowledge base of technical logs.</p>
+          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
+        </div>
+      </div>
+      <div class="portfolio-card fade-in" style="transition-delay:0.1s">
+        <div class="portfolio-thumb portfolio-thumb-2">
+          <span class="thumb-label">Add your screenshot</span>
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags">
+            <span class="ptag">PHP</span>
+            <span class="ptag">MySQL</span>
+            <span class="ptag">Bootstrap</span>
+          </div>
+          <h3>Student Information Management System (TS Fetch)</h3>
+          <p>A dynamic portal tailored for student enrollment, grade monitoring, and academic record keeping. Employs PHP and a relational SQL database to safely process academic profiles and fetch student data instantly across school networks.</p>
+          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
+        </div>
       </div>
     </div>
   </div>
-  <div class="portfolio-grid">
-    <div class="portfolio-card fade-in">
-      <div class="portfolio-thumb portfolio-thumb-1">
-        <span class="thumb-label">Add your screenshot</span>
-      </div>
-      <div class="portfolio-body">
-        <div class="portfolio-tags">
-          <span class="ptag">PHP</span>
-          <span class="ptag">MySQL</span>
-          <span class="ptag">Bootstrap</span>
+  <!-- Website Projects -->
+  <div style="margin-bottom:50px">
+    <h2 class="section-title">Website Projects</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-card fade-in">
+        <div class="portfolio-thumb portfolio-thumb-1">
+          <img src="storage/nvc-website.png" alt="Northwestern Visayas Colleges Website">
         </div>
-        <h3>Project Name Here</h3>
-        <p>Short description of what this project does and the problem it solves.</p>
-        <a href="#" class="portfolio-link">View Project →</a>
+        <div class="portfolio-body">
+          <div class="portfolio-tags">
+            <span class="ptag">Wordpress</span>
+          </div>
+          <h3>Northwestern Visayas Colleges (NVC) Website</h3>
+          <p>The official institutional website for Northwestern Visayan Colleges, developed on WordPress. It functions as a comprehensive digital portal showcasing academic programs, enrollment guidelines, and institutional history. Features custom PHP modifications and a mobile-responsive interface to effectively deliver announcements, admission requirements, and campus updates to students and stakeholders.</p>
+          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
+        </div>
+      </div>
+      <div class="portfolio-card fade-in" style="transition-delay:0.1s">
+        <div class="portfolio-thumb portfolio-thumb-2">
+          <img src="storage/sbtangalan-website.png" alt="Sangguniang Bayan of Tangalan Website">
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags">
+            <span class="ptag">Wordpress</span>
+          </div>
+          <h3>LGU SB Tangalan Website</h3>
+          <p>The official e-governance website for the Sangguniang Bayan of Tangalan, Aklan. Developed on WordPress, this mobile-responsive platform functions as a highly organized digital legislative repository. Features customized Content Management System (CMS) architectures specifically built to manage local government bills, publish active ordinances and resolutions, and broadcast joint committee sessions to enhance municipal transparency and community engagement.</p>
+          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
+        </div>
+      </div>
+      <div class="portfolio-card fade-in" style="transition-delay:0.2s">
+        <div class="portfolio-thumb portfolio-thumb-3">
+          <img src="storage/sgc-website.png" alt="Saint Gabriel College Website">
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags">
+            <span class="ptag">Wordpress</span>
+          </div>
+          <h3>Saint Gabriel College (SGC) Website</h3>
+          <p>The official educational portal for Saint Gabriel College developed on WordPress. It is engineered as a responsive content management platform that catalogs school history, admission criteria, and its diverse academic departments—including basic education, its flagship paramedical/nursing degrees, and TVET vocational programs. Features specialized layout structures and backend optimizations to keep campus news and institutional clearances accessible to students and faculty.</p>
+          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
+        </div>
       </div>
     </div>
-    <div class="portfolio-card fade-in" style="transition-delay:0.1s">
-      <div class="portfolio-thumb portfolio-thumb-2">
-        <span class="thumb-label">Add your screenshot</span>
-      </div>
-      <div class="portfolio-body">
-        <div class="portfolio-tags">
-          <span class="ptag">WordPress</span>
-          <span class="ptag">CSS</span>
+    <div class="portfolio-grid">
+      <div class="portfolio-card fade-in">
+        <div class="portfolio-thumb portfolio-thumb-1">
+          <img src="storage/rbc-website.png" alt="RBC IT Services Website">
         </div>
-        <h3>Project Name Here</h3>
-        <p>Short description of what this project does and the problem it solves.</p>
-        <a href="#" class="portfolio-link">View Project →</a>
+        <div class="portfolio-body">
+          <div class="portfolio-tags">
+            <span class="ptag">Wordpress</span>
+          </div>
+          <h3>RBC I.T Services Website</h3>
+          <p>The official corporate website for RBC IT Services, developed on WordPress. It serves as a professional business portal highlighting the company's core B2B solutions, including data annotation (image, video, and text), data collection, transcription, and offshore technical recruitment support. Built with a responsive, modern interface featuring a dynamic appointment scheduling module, interactive service showcases, and direct communication funnels to capture corporate leads and inquiries effectively.</p>
+          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
+        </div>
       </div>
     </div>
-    <div class="portfolio-card fade-in" style="transition-delay:0.2s">
-      <div class="portfolio-thumb portfolio-thumb-3">
-        <span class="thumb-label">Add your screenshot</span>
-      </div>
-      <div class="portfolio-body">
-        <div class="portfolio-tags">
-          <span class="ptag">JavaScript</span>
-          <span class="ptag">PHP</span>
+  </div>
+  <!-- Local Web App Projects -->
+  <div>
+    <h2 class="section-title">Local Web App Projects</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-card fade-in">
+        <div class="portfolio-thumb portfolio-thumb-1">
+          <span class="thumb-label">Add your screenshot</span>
         </div>
-        <h3>Project Name Here</h3>
-        <p>Short description of what this project does and the problem it solves.</p>
-        <a href="#" class="portfolio-link">View Project →</a>
+        <div class="portfolio-body">
+          <div class="portfolio-tags">
+            <span class="ptag">PHP</span>
+            <span class="ptag">MySQL</span>
+            <span class="ptag">Bootstrap</span>
+          </div>
+          <h3>Civil Registry Management Information System (eCRMIS)</h3>
+          <p>A localized web infrastructure optimized for securing critical civil records, including birth, marriage, and death registries. Engineered with PHP and SQL to handle intensive data queries while ensuring high privacy standards and rapid document printing within local offices.</p>
+          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
+        </div>
+      </div>
+      <div class="portfolio-card fade-in" style="transition-delay:0.1s">
+        <div class="portfolio-thumb portfolio-thumb-2">
+          <span class="thumb-label">Add your screenshot</span>
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags">
+            <span class="ptag">PHP</span>
+            <span class="ptag">MySQL</span>
+            <span class="ptag">Bootstrap</span>
+          </div>
+          <h3>Tricycle Franchising Management System (eTFMS)</h3>
+          <p>A specialized local web app designed to govern transport regulatory workflows, franchise renewals, and operator licensing. Uses Bootstrap for high-speed local data input and an efficient SQL backend to track active permits and compliance histories.</p>
+          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
+        </div>
       </div>
     </div>
   </div>
