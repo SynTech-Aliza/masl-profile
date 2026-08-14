@@ -7,7 +7,7 @@ require __DIR__ . "/app/main.php";
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SynTech- MASL</title>
-<link rel="icon" type="image/png" href="storage/syntech-logo.png">
+<link rel="icon" type="image/png" href="storage/syntech-logo.webp">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -552,7 +552,7 @@ require __DIR__ . "/app/main.php";
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo"><img src="storage/syntech-logo.png" alt="Profile Photo" class="Logo"> SYNTECH</div>
+  <div class="nav-logo"><img src="storage/syntech-logo.webp" alt="Profile Photo" class="Logo"> SYNTECH</div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
@@ -565,7 +565,7 @@ require __DIR__ . "/app/main.php";
 <section class="hero" id="home">
   <div class="orb-container">
     <div class="hero-orb"></div>
-    <img src="storage/myprofile.png" alt="Profile Photo" class="profile-img">
+    <img src="storage/myprofile.webp" alt="Profile Photo" class="profile-img">
   </div>
   <div class="hero-content">
     <div class="hero-badge"><div class="badge-dot"></div> Available for projects</div>
@@ -786,7 +786,7 @@ require __DIR__ . "/app/main.php";
     <div class="portfolio-grid">
       <div class="portfolio-card fade-in">
         <div class="portfolio-thumb portfolio-thumb-1">
-          <img src="storage/nvc-website.png" alt="Northwestern Visayas Colleges Website">
+          <img src="storage/nvc-website.webp" alt="Northwestern Visayas Colleges Website">
         </div>
         <div class="portfolio-body">
           <div class="portfolio-tags">
@@ -799,7 +799,7 @@ require __DIR__ . "/app/main.php";
       </div>
       <div class="portfolio-card fade-in" style="transition-delay:0.1s">
         <div class="portfolio-thumb portfolio-thumb-2">
-          <img src="storage/sbtangalan-website.png" alt="Sangguniang Bayan of Tangalan Website">
+          <img src="storage/sbtangalan-website.webp" alt="Sangguniang Bayan of Tangalan Website">
         </div>
         <div class="portfolio-body">
           <div class="portfolio-tags">
@@ -812,7 +812,7 @@ require __DIR__ . "/app/main.php";
       </div>
       <div class="portfolio-card fade-in" style="transition-delay:0.2s">
         <div class="portfolio-thumb portfolio-thumb-3">
-          <img src="storage/sgc-website.png" alt="Saint Gabriel College Website">
+          <img src="storage/sgc-website.webp" alt="Saint Gabriel College Website">
         </div>
         <div class="portfolio-body">
           <div class="portfolio-tags">
@@ -827,7 +827,7 @@ require __DIR__ . "/app/main.php";
     <div class="portfolio-grid">
       <div class="portfolio-card fade-in">
         <div class="portfolio-thumb portfolio-thumb-1">
-          <img src="storage/rbc-website.png" alt="RBC IT Services Website">
+          <img src="storage/rbc-website.webp" alt="RBC IT Services Website">
         </div>
         <div class="portfolio-body">
           <div class="portfolio-tags">
