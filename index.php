@@ -546,13 +546,109 @@ require __DIR__ . "/app/main.php";
     .portfolio-grid, .services-grid { grid-template-columns: 1fr; }
     footer { padding: 20px; flex-direction: column; gap: 12px; text-align: center; }
   }
+
+  .portfolio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 32px;
+  }
+
+  .carousel-nav {
+    display: flex;
+    gap: 12px;
+  }
+
+  .nav-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--border-hover);
+    background: var(--bg2);
+    color: var(--text);
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s;
+  }
+
+  .nav-btn:hover {
+    background: var(--accent2);
+    border-color: var(--accent2);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  .carousel-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    cursor: grab;
+  }
+
+  .carousel-container:active {
+    cursor: grabbing;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+  }
+
+  .carousel-track .portfolio-card {
+    flex: 0 0 calc(33.333% - 14px);
+    min-width: 280px;
+  }
+
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 32px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .dot.active {
+    width: 24px;
+    border-radius: 12px;
+    background: var(--accent);
+  }
+
+  @media (max-width: 992px) {
+    .carousel-track .portfolio-card {
+      flex: 0 0 calc(50% - 10px);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .carousel-track .portfolio-card {
+      flex: 0 0 100%;
+    }
+    .portfolio-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+  }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo"><a href="/"><img src="storage/syntech-logo.webp" alt="Profile Photo" class="Logo"> SYNTECH</a></div>
+  <div class="nav-logo"><img src="storage/syntech-logo.webp" alt="Profile Photo" class="Logo"> SYNTECH</div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
@@ -649,12 +745,20 @@ require __DIR__ . "/app/main.php";
 
 <!-- PORTFOLIO -->
 <section class="portfolio" id="portfolio">
-  <div class="section-eyebrow">My Work</div>
-  <!-- Online Web Application Projects -->
-  <div style="margin-bottom:50px">
-    <h2 class="section-title">Online Web Application Projects</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-card fade-in">
+  <div class="portfolio-header">
+    <div>
+      <div class="section-eyebrow">My Work</div>
+      <h2 class="section-title">Featured Projects</h2>
+    </div>
+    <div class="carousel-nav">
+      <button class="nav-btn" id="prevBtn" aria-label="Previous Project">&#8592;</button>
+      <button class="nav-btn" id="nextBtn" aria-label="Next Project">&#8594;</button>
+    </div>
+  </div>
+
+  <div class="carousel-container" id="carouselContainer">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="portfolio-card">
         <div class="portfolio-thumb portfolio-thumb-1">
           <span class="thumb-label">Add your screenshot</span>
         </div>
@@ -666,10 +770,9 @@ require __DIR__ . "/app/main.php";
           </div>
           <h3>DENR Forestry Licensing Management System (eFLMS)</h3>
           <p>An online web application designed to streamline the application, evaluation, and issuance of forestry permits and licenses. Built using PHP, Bootstrap, and SQL to ensure secure document tracking and efficient workflows for environmental regulatory compliance.</p>
-          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
         </div>
       </div>
-      <div class="portfolio-card fade-in" style="transition-delay:0.1s">
+      <div class="portfolio-card">
         <div class="portfolio-thumb portfolio-thumb-2">
           <span class="thumb-label">Add your screenshot</span>
         </div>
@@ -681,10 +784,9 @@ require __DIR__ . "/app/main.php";
           </div>
           <h3>Family Planning Management Information System (eFPMIS)</h3>
           <p>A cloud-based healthcare platform that tracks family planning methods, patient consultations, and medical inventory. Utilizes a robust SQL database and a responsive PHP/Bootstrap frontend to provide healthcare workers with real-time analytics and patient tracking.</p>
-          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
         </div>
       </div>
-      <div class="portfolio-card fade-in" style="transition-delay:0.2s">
+      <div class="portfolio-card">
         <div class="portfolio-thumb portfolio-thumb-3">
           <span class="thumb-label">Add your screenshot</span>
         </div>
@@ -696,12 +798,9 @@ require __DIR__ . "/app/main.php";
           </div>
           <h3>Resident and Profiling Management Information System (eRPMIS)</h3>
           <p>A comprehensive community management portal engineered to digitize local resident demographics, certification requests, and profiling data. Features a secure PHP backend and dynamic Bootstrap interface for fast data retrieval and seamless community profiling.</p>
-          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
         </div>
       </div>
-    </div>
-    <div class="portfolio-grid">
-      <div class="portfolio-card fade-in">
+      <div class="portfolio-card">
         <div class="portfolio-thumb portfolio-thumb-1">
           <span class="thumb-label">Add your screenshot</span>
         </div>
@@ -713,10 +812,9 @@ require __DIR__ . "/app/main.php";
           </div>
           <h3>Rose Furniture Management System (eRFMS)</h3>
           <p>An e-commerce and inventory management solution tailored for custom and retail furniture businesses. It integrates a secure SQL database for real-time stock monitoring with an intuitive PHP and Bootstrap web app for seamless customer ordering and sales tracking.</p>
-          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
         </div>
       </div>
-      <div class="portfolio-card fade-in" style="transition-delay:0.1s">
+      <div class="portfolio-card">
         <div class="portfolio-thumb portfolio-thumb-2">
           <span class="thumb-label">Add your screenshot</span>
         </div>
@@ -728,10 +826,9 @@ require __DIR__ . "/app/main.php";
           </div>
           <h3>Room and Equipment Booking Management System (eREBooking)</h3>
           <p>A centralized online scheduling utility that automates facility reservations and equipment lending processes. Developed with PHP and SQL to handle conflict-free calendar booking and user notifications via a responsive Bootstrap frontend.</p>
-          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
         </div>
       </div>
-      <div class="portfolio-card fade-in" style="transition-delay:0.2s">
+      <div class="portfolio-card">
         <div class="portfolio-thumb portfolio-thumb-3">
           <span class="thumb-label">Add your screenshot</span>
         </div>
@@ -743,12 +840,9 @@ require __DIR__ . "/app/main.php";
           </div>
           <h3>Library Management System</h3>
           <p>A digital repository platform created to track book inventories, manage student loans, and calculate overdue penalties. Combines PHP logic and SQL relational tables to provide librarians and members with an automated, easy-to-navigate catalog search.</p>
-          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
         </div>
       </div>
-    </div>
-    <div class="portfolio-grid">
-      <div class="portfolio-card fade-in">
+      <div class="portfolio-card">
         <div class="portfolio-thumb portfolio-thumb-1">
           <span class="thumb-label">Add your screenshot</span>
         </div>
@@ -760,10 +854,9 @@ require __DIR__ . "/app/main.php";
           </div>
           <h3>Technical Support Management System (TS TechSupport)</h3>
           <p>An online IT helpdesk and ticketing platform designed to manage technical assistance requests. Built using PHP and Bootstrap to route user issues, monitor resolution times, and maintain an organized SQL knowledge base of technical logs.</p>
-          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
         </div>
       </div>
-      <div class="portfolio-card fade-in" style="transition-delay:0.1s">
+      <div class="portfolio-card">
         <div class="portfolio-thumb portfolio-thumb-2">
           <span class="thumb-label">Add your screenshot</span>
         </div>
@@ -775,17 +868,10 @@ require __DIR__ . "/app/main.php";
           </div>
           <h3>Student Information Management System (TS Fetch)</h3>
           <p>A dynamic portal tailored for student enrollment, grade monitoring, and academic record keeping. Employs PHP and a relational SQL database to safely process academic profiles and fetch student data instantly across school networks.</p>
-          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
         </div>
       </div>
-    </div>
-  </div>
-  <!-- Website Projects -->
-  <div style="margin-bottom:50px">
-    <h2 class="section-title">Website Projects</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-card fade-in">
-        <div class="portfolio-thumb portfolio-thumb-1">
+      <div class="portfolio-card">
+        <div class="portfolio-thumb portfolio-thumb-3">
           <img src="storage/nvc-website.webp" alt="Northwestern Visayas Colleges Website">
         </div>
         <div class="portfolio-body">
@@ -794,11 +880,10 @@ require __DIR__ . "/app/main.php";
           </div>
           <h3>Northwestern Visayas Colleges (NVC) Website</h3>
           <p>The official institutional website for Northwestern Visayan Colleges, developed on WordPress. It functions as a comprehensive digital portal showcasing academic programs, enrollment guidelines, and institutional history. Features custom PHP modifications and a mobile-responsive interface to effectively deliver announcements, admission requirements, and campus updates to students and stakeholders.</p>
-          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
         </div>
       </div>
-      <div class="portfolio-card fade-in" style="transition-delay:0.1s">
-        <div class="portfolio-thumb portfolio-thumb-2">
+      <div class="portfolio-card">
+        <div class="portfolio-thumb portfolio-thumb-1">
           <img src="storage/sbtangalan-website.webp" alt="Sangguniang Bayan of Tangalan Website">
         </div>
         <div class="portfolio-body">
@@ -807,11 +892,10 @@ require __DIR__ . "/app/main.php";
           </div>
           <h3>LGU SB Tangalan Website</h3>
           <p>The official e-governance website for the Sangguniang Bayan of Tangalan, Aklan. Developed on WordPress, this mobile-responsive platform functions as a highly organized digital legislative repository. Features customized Content Management System (CMS) architectures specifically built to manage local government bills, publish active ordinances and resolutions, and broadcast joint committee sessions to enhance municipal transparency and community engagement.</p>
-          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
         </div>
       </div>
-      <div class="portfolio-card fade-in" style="transition-delay:0.2s">
-        <div class="portfolio-thumb portfolio-thumb-3">
+      <div class="portfolio-card">
+        <div class="portfolio-thumb portfolio-thumb-2">
           <img src="storage/sgc-website.webp" alt="Saint Gabriel College Website">
         </div>
         <div class="portfolio-body">
@@ -820,13 +904,10 @@ require __DIR__ . "/app/main.php";
           </div>
           <h3>Saint Gabriel College (SGC) Website</h3>
           <p>The official educational portal for Saint Gabriel College developed on WordPress. It is engineered as a responsive content management platform that catalogs school history, admission criteria, and its diverse academic departments—including basic education, its flagship paramedical/nursing degrees, and TVET vocational programs. Features specialized layout structures and backend optimizations to keep campus news and institutional clearances accessible to students and faculty.</p>
-          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
         </div>
       </div>
-    </div>
-    <div class="portfolio-grid">
-      <div class="portfolio-card fade-in">
-        <div class="portfolio-thumb portfolio-thumb-1">
+      <div class="portfolio-card">
+        <div class="portfolio-thumb portfolio-thumb-3">
           <img src="storage/rbc-website.webp" alt="RBC IT Services Website">
         </div>
         <div class="portfolio-body">
@@ -835,16 +916,9 @@ require __DIR__ . "/app/main.php";
           </div>
           <h3>RBC I.T Services Website</h3>
           <p>The official corporate website for RBC IT Services, developed on WordPress. It serves as a professional business portal highlighting the company's core B2B solutions, including data annotation (image, video, and text), data collection, transcription, and offshore technical recruitment support. Built with a responsive, modern interface featuring a dynamic appointment scheduling module, interactive service showcases, and direct communication funnels to capture corporate leads and inquiries effectively.</p>
-          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
         </div>
       </div>
-    </div>
-  </div>
-  <!-- Local Web App Projects -->
-  <div>
-    <h2 class="section-title">Local Web App Projects</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-card fade-in">
+      <div class="portfolio-card">
         <div class="portfolio-thumb portfolio-thumb-1">
           <span class="thumb-label">Add your screenshot</span>
         </div>
@@ -856,10 +930,9 @@ require __DIR__ . "/app/main.php";
           </div>
           <h3>Civil Registry Management Information System (eCRMIS)</h3>
           <p>A localized web infrastructure optimized for securing critical civil records, including birth, marriage, and death registries. Engineered with PHP and SQL to handle intensive data queries while ensuring high privacy standards and rapid document printing within local offices.</p>
-          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
         </div>
       </div>
-      <div class="portfolio-card fade-in" style="transition-delay:0.1s">
+      <div class="portfolio-card">
         <div class="portfolio-thumb portfolio-thumb-2">
           <span class="thumb-label">Add your screenshot</span>
         </div>
@@ -871,11 +944,12 @@ require __DIR__ . "/app/main.php";
           </div>
           <h3>Tricycle Franchising Management System (eTFMS)</h3>
           <p>A specialized local web app designed to govern transport regulatory workflows, franchise renewals, and operator licensing. Uses Bootstrap for high-speed local data input and an efficient SQL backend to track active permits and compliance histories.</p>
-          <!-- <a href="#" class="portfolio-link">View Project →</a> -->
         </div>
       </div>
     </div>
   </div>
+
+  <div class="carousel-dots" id="carouselDots"></div>
 </section>
 
 <!-- CONTACT -->
@@ -927,6 +1001,122 @@ require __DIR__ . "/app/main.php";
   </div>
   <div class="footer-copy">Design & Developed by Syntech © 2026</div>
 </footer>
+
+<script>
+  const track = document.getElementById('carouselTrack');
+  const container = document.getElementById('carouselContainer');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const dotsContainer = document.getElementById('carouselDots');
+
+  const cards = Array.from(track.children);
+  let currentIndex = 0;
+  let startX = 0;
+  let isDragging = false;
+  let currentTranslate = 0;
+  let prevTranslate = 0;
+
+  function getVisibleCards() {
+    if (window.innerWidth <= 600) return 1;
+    if (window.innerWidth <= 992) return 2;
+    return 3;
+  }
+
+  function getMaxIndex() {
+    return Math.max(0, cards.length - getVisibleCards());
+  }
+
+  function createDots() {
+    dotsContainer.innerHTML = '';
+    const maxIdx = getMaxIndex();
+    for (let i = 0; i <= maxIdx; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (i === currentIndex) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function updateDots() {
+    const dots = Array.from(dotsContainer.children);
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === currentIndex);
+    });
+  }
+
+  function updateCarousel() {
+    const cardWidth = cards[0].getBoundingClientRect().width;
+    const gap = 20;
+    const offset = -(currentIndex * (cardWidth + gap));
+    track.style.transform = `translateX(${offset}px)`;
+    prevTranslate = offset;
+    updateDots();
+  }
+
+  function goToSlide(index) {
+    currentIndex = Math.min(Math.max(index, 0), getMaxIndex());
+    updateCarousel();
+  }
+
+  prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) goToSlide(currentIndex - 1);
+    else goToSlide(getMaxIndex());
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentIndex < getMaxIndex()) goToSlide(currentIndex + 1);
+    else goToSlide(0);
+  });
+
+  // Touch & Drag Support
+  container.addEventListener('touchstart', touchStart);
+  container.addEventListener('touchend', touchEnd);
+  container.addEventListener('touchmove', touchMove);
+
+  container.addEventListener('mousedown', touchStart);
+  container.addEventListener('mouseup', touchEnd);
+  container.addEventListener('mouseleave', touchEnd);
+  container.addEventListener('mousemove', touchMove);
+
+  function touchStart(e) {
+    isDragging = true;
+    startX = getPositionX(e);
+    track.style.transition = 'none';
+  }
+
+  function touchMove(e) {
+    if (!isDragging) return;
+    const currentPosition = getPositionX(e);
+    currentTranslate = prevTranslate + currentPosition - startX;
+    track.style.transform = `translateX(${currentTranslate}px)`;
+  }
+
+  function touchEnd() {
+    if (!isDragging) return;
+    isDragging = false;
+    track.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
+    const movedBy = currentTranslate - prevTranslate;
+
+    if (movedBy < -50 && currentIndex < getMaxIndex()) currentIndex += 1;
+    if (movedBy > 50 && currentIndex > 0) currentIndex -= 1;
+
+    updateCarousel();
+  }
+
+  function getPositionX(e) {
+    return e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+  }
+
+  window.addEventListener('resize', () => {
+    createDots();
+    goToSlide(Math.min(currentIndex, getMaxIndex()));
+  });
+
+  // Init
+  createDots();
+  updateCarousel();
+</script>
 
 <script>
   // Intersection observer for fade-in
