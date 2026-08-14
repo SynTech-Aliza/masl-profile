@@ -552,7 +552,7 @@ require __DIR__ . "/app/main.php";
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo"><img src="storage/syntech-logo.webp" alt="Profile Photo" class="Logo"> SYNTECH</div>
+  <div class="nav-logo"><a href="/"><img src="storage/syntech-logo.webp" alt="Profile Photo" class="Logo"> SYNTECH</a></div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
