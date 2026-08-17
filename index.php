@@ -872,54 +872,6 @@ require __DIR__ . "/app/main.php";
       </div>
       <div class="portfolio-card">
         <div class="portfolio-thumb portfolio-thumb-3">
-          <img src="storage/nvc-website.webp" alt="Northwestern Visayas Colleges Website">
-        </div>
-        <div class="portfolio-body">
-          <div class="portfolio-tags">
-            <span class="ptag">Wordpress</span>
-          </div>
-          <h3>Northwestern Visayas Colleges (NVC) Website</h3>
-          <p>The official institutional website for Northwestern Visayan Colleges, developed on WordPress. It functions as a comprehensive digital portal showcasing academic programs, enrollment guidelines, and institutional history. Features custom PHP modifications and a mobile-responsive interface to effectively deliver announcements, admission requirements, and campus updates to students and stakeholders.</p>
-        </div>
-      </div>
-      <div class="portfolio-card">
-        <div class="portfolio-thumb portfolio-thumb-1">
-          <img src="storage/sbtangalan-website.webp" alt="Sangguniang Bayan of Tangalan Website">
-        </div>
-        <div class="portfolio-body">
-          <div class="portfolio-tags">
-            <span class="ptag">Wordpress</span>
-          </div>
-          <h3>LGU SB Tangalan Website</h3>
-          <p>The official e-governance website for the Sangguniang Bayan of Tangalan, Aklan. Developed on WordPress, this mobile-responsive platform functions as a highly organized digital legislative repository. Features customized Content Management System (CMS) architectures specifically built to manage local government bills, publish active ordinances and resolutions, and broadcast joint committee sessions to enhance municipal transparency and community engagement.</p>
-        </div>
-      </div>
-      <div class="portfolio-card">
-        <div class="portfolio-thumb portfolio-thumb-2">
-          <img src="storage/sgc-website.webp" alt="Saint Gabriel College Website">
-        </div>
-        <div class="portfolio-body">
-          <div class="portfolio-tags">
-            <span class="ptag">Wordpress</span>
-          </div>
-          <h3>Saint Gabriel College (SGC) Website</h3>
-          <p>The official educational portal for Saint Gabriel College developed on WordPress. It is engineered as a responsive content management platform that catalogs school history, admission criteria, and its diverse academic departments—including basic education, its flagship paramedical/nursing degrees, and TVET vocational programs. Features specialized layout structures and backend optimizations to keep campus news and institutional clearances accessible to students and faculty.</p>
-        </div>
-      </div>
-      <div class="portfolio-card">
-        <div class="portfolio-thumb portfolio-thumb-3">
-          <img src="storage/rbc-website.webp" alt="RBC IT Services Website">
-        </div>
-        <div class="portfolio-body">
-          <div class="portfolio-tags">
-            <span class="ptag">Wordpress</span>
-          </div>
-          <h3>RBC I.T Services Website</h3>
-          <p>The official corporate website for RBC IT Services, developed on WordPress. It serves as a professional business portal highlighting the company's core B2B solutions, including data annotation (image, video, and text), data collection, transcription, and offshore technical recruitment support. Built with a responsive, modern interface featuring a dynamic appointment scheduling module, interactive service showcases, and direct communication funnels to capture corporate leads and inquiries effectively.</p>
-        </div>
-      </div>
-      <div class="portfolio-card">
-        <div class="portfolio-thumb portfolio-thumb-1">
           <span class="thumb-label">Add your screenshot</span>
         </div>
         <div class="portfolio-body">
@@ -933,7 +885,7 @@ require __DIR__ . "/app/main.php";
         </div>
       </div>
       <div class="portfolio-card">
-        <div class="portfolio-thumb portfolio-thumb-2">
+        <div class="portfolio-thumb portfolio-thumb-1">
           <span class="thumb-label">Add your screenshot</span>
         </div>
         <div class="portfolio-body">
@@ -944,6 +896,54 @@ require __DIR__ . "/app/main.php";
           </div>
           <h3>Tricycle Franchising Management System (eTFMS)</h3>
           <p>A specialized local web app designed to govern transport regulatory workflows, franchise renewals, and operator licensing. Uses Bootstrap for high-speed local data input and an efficient SQL backend to track active permits and compliance histories.</p>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-thumb portfolio-thumb-2">
+          <img src="storage/nvc-website.webp" alt="Northwestern Visayas Colleges Website">
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags">
+            <span class="ptag">Wordpress</span>
+          </div>
+          <h3>Northwestern Visayas Colleges (NVC) Website</h3>
+          <p>The official institutional website for Northwestern Visayan Colleges, developed on WordPress. It functions as a comprehensive digital portal showcasing academic programs, enrollment guidelines, and institutional history. Features custom PHP modifications and a mobile-responsive interface to effectively deliver announcements, admission requirements, and campus updates to students and stakeholders.</p>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-thumb portfolio-thumb-3">
+          <img src="storage/sbtangalan-website.webp" alt="Sangguniang Bayan of Tangalan Website">
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags">
+            <span class="ptag">Wordpress</span>
+          </div>
+          <h3>LGU SB Tangalan Website</h3>
+          <p>The official e-governance website for the Sangguniang Bayan of Tangalan, Aklan. Developed on WordPress, this mobile-responsive platform functions as a highly organized digital legislative repository. Features customized Content Management System (CMS) architectures specifically built to manage local government bills, publish active ordinances and resolutions, and broadcast joint committee sessions to enhance municipal transparency and community engagement.</p>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-thumb portfolio-thumb-1">
+          <img src="storage/sgc-website.webp" alt="Saint Gabriel College Website">
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags">
+            <span class="ptag">Wordpress</span>
+          </div>
+          <h3>Saint Gabriel College (SGC) Website</h3>
+          <p>The official educational portal for Saint Gabriel College developed on WordPress. It is engineered as a responsive content management platform that catalogs school history, admission criteria, and its diverse academic departments—including basic education, its flagship paramedical/nursing degrees, and TVET vocational programs. Features specialized layout structures and backend optimizations to keep campus news and institutional clearances accessible to students and faculty.</p>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-thumb portfolio-thumb-2">
+          <img src="storage/rbc-website.webp" alt="RBC IT Services Website">
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags">
+            <span class="ptag">Wordpress</span>
+          </div>
+          <h3>RBC I.T Services Website</h3>
+          <p>The official corporate website for RBC IT Services, developed on WordPress. It serves as a professional business portal highlighting the company's core B2B solutions, including data annotation (image, video, and text), data collection, transcription, and offshore technical recruitment support. Built with a responsive, modern interface featuring a dynamic appointment scheduling module, interactive service showcases, and direct communication funnels to capture corporate leads and inquiries effectively.</p>
         </div>
       </div>
     </div>
