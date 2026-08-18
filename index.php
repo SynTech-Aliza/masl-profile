@@ -946,6 +946,20 @@ require __DIR__ . "/app/main.php";
           <p>The official corporate website for RBC IT Services, developed on WordPress. It serves as a professional business portal highlighting the company's core B2B solutions, including data annotation (image, video, and text), data collection, transcription, and offshore technical recruitment support. Built with a responsive, modern interface featuring a dynamic appointment scheduling module, interactive service showcases, and direct communication funnels to capture corporate leads and inquiries effectively.</p>
         </div>
       </div>
+      <div class="portfolio-card">
+        <div class="portfolio-thumb portfolio-thumb-3">
+          <img src="storage/flames_apk.webp" alt="Sangguniang Bayan of Tangalan Website">
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags">
+            <span class="ptag">Dart</span>
+            <span class="ptag">Swift</span>
+            <span class="ptag">Kotlin</span>
+          </div>
+          <h3>FLAMES Matchmaker App</h3>
+          <p>A modern, interactive cross-platform mobile application based on the classic FLAMES game algorithm. Built with Flutter and Dart, the app features fluid animations, custom UI components, and real-time string parsing logic to calculate dynamic compatibility outcomes instantly.</p>
+        </div>
+      </div>
     </div>
   </div>
 
