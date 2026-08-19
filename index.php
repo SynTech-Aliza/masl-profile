@@ -758,6 +758,35 @@ require __DIR__ . "/app/main.php";
 
   <div class="carousel-container" id="carouselContainer">
     <div class="carousel-track" id="carouselTrack">
+
+      <div class="portfolio-card">
+        <div class="portfolio-thumb">
+          <img src="storage/flamesmatchmaker.webp" alt="FLAMES Matchmaker App">
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags">
+            <span class="ptag">Dart</span>
+            <span class="ptag">Swift</span>
+            <span class="ptag">Kotlin</span>
+            <span class="ptag">YAML</span>
+            <span class="ptag">XML</span>
+          </div>
+          <h3>FLAMES Matchmaker</h3>
+          <p>A cross-platform mobile application built with Flutter that reimagines the classic nostalgic game FLAMES (Friends, Lovers, Affection, Marriage, Enemies, Siblings) with a clean modern UI and real-time character matching algorithms.</p>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-thumb">
+          <img src="storage/rbc-website.webp" alt="RBC IT Services Website">
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags">
+            <span class="ptag">Wordpress</span>
+          </div>
+          <h3>RBC I.T Services Website</h3>
+          <p>The official corporate website for RBC IT Services, developed on WordPress. It serves as a professional business portal highlighting the company's core B2B solutions, including data annotation (image, video, and text), data collection, transcription, and offshore technical recruitment support. Built with a responsive, modern interface featuring a dynamic appointment scheduling module, interactive service showcases, and direct communication funnels to capture corporate leads and inquiries effectively.</p>
+        </div>
+      </div>
       <div class="portfolio-card">
         <div class="portfolio-thumb portfolio-thumb-1">
           <span class="thumb-label">Add your screenshot</span>
@@ -899,7 +928,7 @@ require __DIR__ . "/app/main.php";
         </div>
       </div>
       <div class="portfolio-card">
-        <div class="portfolio-thumb portfolio-thumb-2">
+        <div class="portfolio-thumb">
           <img src="storage/nvc-website.webp" alt="Northwestern Visayas Colleges Website">
         </div>
         <div class="portfolio-body">
@@ -911,7 +940,7 @@ require __DIR__ . "/app/main.php";
         </div>
       </div>
       <div class="portfolio-card">
-        <div class="portfolio-thumb portfolio-thumb-3">
+        <div class="portfolio-thumb">
           <img src="storage/sbtangalan-website.webp" alt="Sangguniang Bayan of Tangalan Website">
         </div>
         <div class="portfolio-body">
@@ -923,7 +952,7 @@ require __DIR__ . "/app/main.php";
         </div>
       </div>
       <div class="portfolio-card">
-        <div class="portfolio-thumb portfolio-thumb-1">
+        <div class="portfolio-thumb">
           <img src="storage/sgc-website.webp" alt="Saint Gabriel College Website">
         </div>
         <div class="portfolio-body">
@@ -934,35 +963,8 @@ require __DIR__ . "/app/main.php";
           <p>The official educational portal for Saint Gabriel College developed on WordPress. It is engineered as a responsive content management platform that catalogs school history, admission criteria, and its diverse academic departments—including basic education, its flagship paramedical/nursing degrees, and TVET vocational programs. Features specialized layout structures and backend optimizations to keep campus news and institutional clearances accessible to students and faculty.</p>
         </div>
       </div>
-      <div class="portfolio-card">
-        <div class="portfolio-thumb portfolio-thumb-2">
-          <img src="storage/rbc-website.webp" alt="RBC IT Services Website">
-        </div>
-        <div class="portfolio-body">
-          <div class="portfolio-tags">
-            <span class="ptag">Wordpress</span>
-          </div>
-          <h3>RBC I.T Services Website</h3>
-          <p>The official corporate website for RBC IT Services, developed on WordPress. It serves as a professional business portal highlighting the company's core B2B solutions, including data annotation (image, video, and text), data collection, transcription, and offshore technical recruitment support. Built with a responsive, modern interface featuring a dynamic appointment scheduling module, interactive service showcases, and direct communication funnels to capture corporate leads and inquiries effectively.</p>
-        </div>
-      </div>
-      <div class="portfolio-card">
-        <div class="portfolio-thumb portfolio-thumb-3">
-          <img src="storage/flames_apk.webp" alt="Sangguniang Bayan of Tangalan Website">
-        </div>
-        <div class="portfolio-body">
-          <div class="portfolio-tags">
-            <span class="ptag">Dart</span>
-            <span class="ptag">Swift</span>
-            <span class="ptag">Kotlin</span>
-          </div>
-          <h3>FLAMES Matchmaker App</h3>
-          <p>A modern, interactive cross-platform mobile application based on the classic FLAMES game algorithm. Built with Flutter and Dart, the app features fluid animations, custom UI components, and real-time string parsing logic to calculate dynamic compatibility outcomes instantly.</p>
-        </div>
-      </div>
     </div>
   </div>
-
   <div class="carousel-dots" id="carouselDots"></div>
 </section>
 
