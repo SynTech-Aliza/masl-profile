@@ -788,6 +788,22 @@ require __DIR__ . "/app/main.php";
         </div>
       </div>
       <div class="portfolio-card">
+        <div class="portfolio-thumb portfolio-thumb-3">
+          <span class="thumb-label">Add your screenshot</span>
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags">
+            <span class="ptag">PHP</span>
+            <span class="ptag">MySQL</span>
+            <span class="ptag">HTML</span>
+            <span class="ptag">CSS</span>
+            <span class="ptag">JavaScript</span>
+          </div>
+          <h3>Student Faculty Evaluation System</h3>
+          <p>The Student Faculty Evaluation System is a secure, local web-based application designed to automate and streamline the academic feedback process within an institutional network. Operating locally without requiring an internet connection, it allows students to submit anonymous performance evaluations, provides faculty with actionable teaching analytics, and gives administrators full control over evaluation management and institutional reporting..</p>
+        </div>
+      </div>
+      <div class="portfolio-card">
         <div class="portfolio-thumb portfolio-thumb-1">
           <span class="thumb-label">Add your screenshot</span>
         </div>
