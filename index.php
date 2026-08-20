@@ -788,8 +788,8 @@ require __DIR__ . "/app/main.php";
         </div>
       </div>
       <div class="portfolio-card">
-        <div class="portfolio-thumb portfolio-thumb-3">
-          <span class="thumb-label">Add your screenshot</span>
+        <div class="portfolio-thumb">
+          <img src="storage/sfes.webp" alt="Student Faculty Evaluation System">
         </div>
         <div class="portfolio-body">
           <div class="portfolio-tags">
@@ -818,7 +818,7 @@ require __DIR__ . "/app/main.php";
         </div>
       </div>
       <div class="portfolio-card">
-        <div class="portfolio-thumb portfolio-thumb-2">
+        <div class="portfolio-thumb">
           <img src="storage/efpmis.webp" alt="Family Planning Management Information System (eFPMIS)">
         </div>
         <div class="portfolio-body">
@@ -832,7 +832,7 @@ require __DIR__ . "/app/main.php";
         </div>
       </div>
       <div class="portfolio-card">
-        <div class="portfolio-thumb portfolio-thumb-3">
+        <div class="portfolio-thumb">
           <img src="storage/erpmis.webp" alt="Resident and Profiling Management Information System (eRPMIS)">
         </div>
         <div class="portfolio-body">
@@ -846,7 +846,7 @@ require __DIR__ . "/app/main.php";
         </div>
       </div>
       <div class="portfolio-card">
-        <div class="portfolio-thumb portfolio-thumb-1">
+        <div class="portfolio-thumb">
           <img src="storage/erfms.webp" alt="Rose Furniture Management System (eRFMS)">
         </div>
         <div class="portfolio-body">
@@ -860,7 +860,7 @@ require __DIR__ . "/app/main.php";
         </div>
       </div>
       <div class="portfolio-card">
-        <div class="portfolio-thumb portfolio-thumb-2">
+        <div class="portfolio-thumb">
           <img src="storage/erebooking.webp" alt="Room and Equipment Booking Management System (eREBooking)">
         </div>
         <div class="portfolio-body">
