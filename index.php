@@ -789,22 +789,6 @@ require __DIR__ . "/app/main.php";
       </div>
       <div class="portfolio-card">
         <div class="portfolio-thumb">
-          <img src="storage/sfes.webp" alt="Student Faculty Evaluation System">
-        </div>
-        <div class="portfolio-body">
-          <div class="portfolio-tags">
-            <span class="ptag">PHP</span>
-            <span class="ptag">MySQL</span>
-            <span class="ptag">HTML</span>
-            <span class="ptag">CSS</span>
-            <span class="ptag">JavaScript</span>
-          </div>
-          <h3>Student Faculty Evaluation System</h3>
-          <p>The Student Faculty Evaluation System is a secure, local web-based application designed to automate and streamline the academic feedback process within an institutional network. Operating locally without requiring an internet connection, it allows students to submit anonymous performance evaluations, provides faculty with actionable teaching analytics, and gives administrators full control over evaluation management and institutional reporting..</p>
-        </div>
-      </div>
-      <div class="portfolio-card">
-        <div class="portfolio-thumb">
           <img src="storage/eflms.webp" alt="DENR Forestry Licensing Management System (eFLMS)">
         </div>
         <div class="portfolio-body">
@@ -871,6 +855,22 @@ require __DIR__ . "/app/main.php";
           </div>
           <h3>Room and Equipment Booking Management System (eREBooking)</h3>
           <p>A centralized online scheduling utility that automates facility reservations and equipment lending processes. Developed with PHP and SQL to handle conflict-free calendar booking and user notifications via a responsive Bootstrap frontend.</p>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-thumb">
+          <img src="storage/sfes.webp" alt="Student Faculty Evaluation System">
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags">
+            <span class="ptag">PHP</span>
+            <span class="ptag">MySQL</span>
+            <span class="ptag">HTML</span>
+            <span class="ptag">CSS</span>
+            <span class="ptag">JavaScript</span>
+          </div>
+          <h3>Student Faculty Evaluation System</h3>
+          <p>The Student Faculty Evaluation System is a secure, local web-based application designed to automate and streamline the academic feedback process within an institutional network. Operating locally without requiring an internet connection, it allows students to submit anonymous performance evaluations, provides faculty with actionable teaching analytics, and gives administrators full control over evaluation management and institutional reporting..</p>
         </div>
       </div>
       <div class="portfolio-card">
