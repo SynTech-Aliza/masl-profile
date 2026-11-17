@@ -5,6 +5,9 @@ use PHPMailer\PHPMailer\Exception;
 
 require __DIR__ . '/../vendor/autoload.php';
 
+$contactStatus = '';
+$contactStatusType = '';
+
 if (isset($_POST['sent'])) {
 
     $name = $_POST['name'] ?? '';
@@ -73,19 +76,12 @@ if (isset($_POST['sent'])) {
 
         $mail->send();
 
-        // SUCCESS POPUP
-        echo "<script>
-            alert('Message sent successfully!');
-            window.location.href = window.location.href;
-        </script>";
+        $contactStatus = 'Email sent successfully. Thank you for reaching out!';
+        $contactStatusType = 'success';
 
     } catch (Exception $e) {
-
-        // ERROR POPUP
-        echo "<script>
-            alert('Message could not be sent. Please try again.');
-            window.history.back();
-        </script>";
+        $contactStatus = 'Email could not be sent. Please try again.';
+        $contactStatusType = 'error';
     }
 }
 ?>

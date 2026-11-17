@@ -6,7 +6,8 @@ require __DIR__ . "/app/main.php";
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SynTech</title>
+<title>SynTech - MASL | Web Developer</title>
+<meta name="description" content="Portfolio of Ma. Aliza Lomugdang, a full-stack web developer building responsive websites and web applications.">
 <link rel="icon" type="image/png" href="storage/syntech-logo.webp">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
@@ -114,10 +115,11 @@ require __DIR__ . "/app/main.php";
   /* Container handles position, size, and centering */
   .orb-container {
     position: absolute;
-    top: 20%;
-    right: 5%;
-    width: 520px;
-    height: 520px;
+    top: 50%;
+    right: 3%;
+    width: min(42vw, 520px);
+    aspect-ratio: 1;
+    transform: translateY(-50%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -142,12 +144,10 @@ require __DIR__ . "/app/main.php";
   .profile-img {
     position: relative;
     z-index: 2;
-    max-width: 80%;
-    max-height: 80%;
+    width: 78%;
+    height: 78%;
     object-fit: cover;
-
-    /* Adjust scale: 1.2 zooms in 20%, 1.5 zooms in 50%, etc. */
-    transform: scale(1.5); 
+    border-radius: 50%;
   }
 
   @keyframes pulse {
@@ -155,7 +155,7 @@ require __DIR__ . "/app/main.php";
     50% { transform: scale(1.06); opacity: 0.7; }
   }
 
-  .hero-content { position: relative; z-index: 2; max-width: 800px; }
+  .hero-content { position: relative; z-index: 2; max-width: min(58%, 800px); }
 
   .hero-greeting {
     font-size: 20px;
@@ -165,7 +165,7 @@ require __DIR__ . "/app/main.php";
   }
   .hero-name {
     font-family: var(--font-display);
-    font-size: clamp(48px, 8vw, 60px);
+    font-size: clamp(40px, 8vw, 60px);
     font-weight: 800;
     line-height: 1.05;
     margin-bottom: 20px;
@@ -270,7 +270,7 @@ require __DIR__ . "/app/main.php";
   .skill-tag:hover { border-color: var(--accent2); color: var(--accent2); background: rgba(168,127,212,0.08); }
 
   /* ── SECTION SHARED ── */
-  section { padding: 96px 48px; }
+  section { padding: clamp(56px, 8vw, 96px) clamp(20px, 5vw, 48px); }
   .section-eyebrow {
     font-size: 11px;
     letter-spacing: 0.14em;
@@ -537,10 +537,41 @@ require __DIR__ . "/app/main.php";
   }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
 
+  @media (max-width: 992px) {
+    .orb-container { width: 38vw; right: 2%; }
+    .hero-content { max-width: 55%; }
+    .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .about-grid, .contact-grid { gap: 32px; }
+  }
+
   @media (max-width: 768px) {
-    nav { padding: 16px 20px; }
-    .nav-links { display: none; }
-    section, .hero { padding: 72px 20px; }
+    nav { padding: 12px 20px; flex-wrap: wrap; }
+    .nav-links {
+      display: flex;
+      order: 3;
+      width: 100%;
+      justify-content: center;
+      gap: clamp(16px, 6vw, 32px);
+      padding-top: 10px;
+    }
+    .nav-cta { padding: 7px 14px; }
+    section { padding: 64px 20px; }
+    .hero {
+      min-height: auto;
+      flex-direction: column;
+      align-items: stretch;
+      padding: 136px 20px 72px;
+    }
+    .orb-container {
+      position: relative;
+      top: auto;
+      right: auto;
+      transform: none;
+      align-self: center;
+      width: min(72vw, 320px);
+      margin-bottom: 28px;
+    }
+    .hero-content { max-width: 100%; }
     .skills-strip { padding: 16px 20px; }
     .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
     .portfolio-grid, .services-grid { grid-template-columns: 1fr; }
@@ -557,28 +588,6 @@ require __DIR__ . "/app/main.php";
   .carousel-nav {
     display: flex;
     gap: 12px;
-  }
-
-  .nav-btn {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 1px solid var(--border-hover);
-    background: var(--bg2);
-    color: var(--text);
-    font-size: 18px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.25s;
-  }
-
-  .nav-btn:hover {
-    background: var(--accent2);
-    border-color: var(--accent2);
-    color: #fff;
-    transform: translateY(-2px);
   }
 
   .carousel-container {
@@ -604,28 +613,6 @@ require __DIR__ . "/app/main.php";
     min-width: 280px;
   }
 
-  .carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 32px;
-  }
-
-  .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-
-  .dot.active {
-    width: 24px;
-    border-radius: 12px;
-    background: var(--accent);
-  }
-
   @media (max-width: 992px) {
     .carousel-track .portfolio-card {
       flex: 0 0 calc(50% - 10px);
@@ -635,11 +622,368 @@ require __DIR__ . "/app/main.php";
   @media (max-width: 600px) {
     .carousel-track .portfolio-card {
       flex: 0 0 100%;
+      min-width: 0;
     }
     .portfolio-header {
       flex-direction: column;
       align-items: flex-start;
       gap: 16px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    nav { padding-right: 16px; padding-left: 16px; }
+    section { padding-right: 16px; padding-left: 16px; }
+    .hero { padding: 132px 16px 56px; }
+    .nav-links { gap: 14px; }
+    .hero-name { font-size: clamp(36px, 11vw, 44px); }
+    .hero-btns > * { flex: 1 1 auto; }
+    .stat-item { padding: 16px; gap: 14px; }
+    .stat-num { min-width: 56px; font-size: 28px; }
+    .contact-row { align-items: flex-start; }
+    .contact-row a { min-width: 0; overflow-wrap: anywhere; }
+  }
+
+  /* Developer portfolio visual system */
+  :root {
+    --bg: #07070f;
+    --bg2: #0d0d1a;
+    --bg3: #111125;
+    --border: rgba(255, 255, 255, 0.07);
+    --border-hover: rgba(255, 255, 255, 0.15);
+    --text: #e8e8f0;
+    --muted: #8888ad;
+    --accent: #d4a853;
+    --accent2: #a87fd4;
+    --glow: rgba(140, 80, 220, 0.35);
+    --glow2: rgba(212, 168, 83, 0.2);
+  }
+
+  body {
+    background:
+      radial-gradient(ellipse at 75% 12%, rgba(124, 58, 237, 0.14), transparent 34rem),
+      var(--bg);
+    color: var(--text);
+  }
+
+  nav {
+    padding: 14px clamp(20px, 5vw, 72px);
+    background: rgba(7, 7, 15, 0.88);
+    border-bottom-color: var(--border);
+  }
+
+  .nav-logo {
+    font-size: 15px;
+    letter-spacing: 0.12em;
+  }
+
+  .nav-logo img {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    object-fit: cover;
+  }
+
+  .nav-links { gap: clamp(18px, 3vw, 36px); }
+  .nav-links a { color: #a5a5bf; }
+  .nav-links a:hover { color: var(--accent); }
+
+  .nav-cta {
+    border-color: rgba(212, 168, 83, 0.4);
+    border-radius: 8px;
+    color: var(--accent);
+    background: rgba(212, 168, 83, 0.06);
+  }
+  .nav-cta:hover { background: rgba(212, 168, 83, 0.14); }
+
+  .hero {
+    min-height: min(900px, 100vh);
+    padding: 132px clamp(20px, 8vw, 120px) 96px;
+    background-image:
+      linear-gradient(rgba(168, 127, 212, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(168, 127, 212, 0.035) 1px, transparent 1px);
+    background-size: 48px 48px;
+    background-position: center center;
+  }
+
+  .hero-content { max-width: min(58%, 700px); }
+
+  .hero-greeting {
+    color: var(--accent);
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hero-name {
+    font-size: clamp(48px, 7vw, 82px);
+    line-height: 1;
+    letter-spacing: -0.055em;
+    background: linear-gradient(120deg, #ffffff 20%, #c4a0f0 72%, #a078e0 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-title {
+    color: #d1c5df;
+    font-family: var(--font-body);
+    font-size: clamp(17px, 2vw, 21px);
+    line-height: 1.5;
+  }
+
+  .hero-desc {
+    color: var(--muted);
+    max-width: 500px;
+    font-size: 16px;
+  }
+
+  .hero-badge {
+    border-color: rgba(168, 127, 212, 0.28);
+    border-radius: 7px;
+    background: rgba(168, 127, 212, 0.08);
+    color: #d2b9ee;
+  }
+
+  .orb-container {
+    right: clamp(28px, 8vw, 120px);
+    width: min(38vw, 460px);
+    filter: drop-shadow(0 28px 70px rgba(0, 0, 0, 0.45));
+  }
+
+  .hero-orb {
+    background: radial-gradient(circle at 45% 45%, rgba(168, 127, 212, 0.42), rgba(76, 29, 149, 0.24) 48%, transparent 75%);
+    filter: blur(40px);
+  }
+
+  .profile-img {
+    width: 76%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center top;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 0 0 12px rgba(168, 127, 212, 0.035), 0 22px 65px rgba(0, 0, 0, 0.4);
+  }
+
+  .btn-primary, .form-submit {
+    background: linear-gradient(135deg, #7c3aed, #5b21b6);
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 26px rgba(124, 58, 237, 0.24);
+    font-weight: 600;
+  }
+  .btn-primary:hover, .form-submit:hover {
+    background: linear-gradient(135deg, #8b4cf0, #6b2fc5);
+    box-shadow: 0 12px 32px rgba(124, 58, 237, 0.34);
+  }
+
+  .btn-ghost {
+    border-radius: 8px;
+    border-color: var(--border-hover);
+  }
+
+  .skills-strip {
+    justify-content: center;
+    padding: 20px clamp(20px, 5vw, 72px);
+    background: rgba(13, 13, 26, 0.84);
+  }
+
+  .skills-strip-label {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .skill-tag {
+    padding: 6px 14px;
+    border-radius: 7px;
+    color: #b8b8ce;
+    background: rgba(255, 255, 255, 0.025);
+  }
+
+  section { padding: clamp(72px, 9vw, 112px) clamp(20px, 8vw, 120px); }
+
+  .section-eyebrow {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .section-eyebrow::after { background: var(--accent); }
+
+  .section-title {
+    font-size: clamp(32px, 4.5vw, 50px);
+    letter-spacing: -0.04em;
+  }
+
+  .about, .contact {
+    background: linear-gradient(180deg, rgba(13, 13, 26, 0.96), rgba(10, 10, 20, 0.96));
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .about-grid, .contact-grid {
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .about-text { color: #a5a5bf; }
+  .about-text strong { color: var(--text); }
+
+  .stat-item, .service-card, .portfolio-card {
+    background: linear-gradient(145deg, rgba(17, 17, 37, 0.96), rgba(13, 13, 26, 0.96));
+    border-color: var(--border);
+    border-radius: 12px;
+  }
+
+  .stat-item { padding: 22px 24px; }
+  .stat-num { color: var(--accent); }
+  .stat-info .stat-desc { color: var(--muted); }
+
+  .service-card {
+    padding: 24px;
+    cursor: default;
+  }
+  .service-card:hover {
+    border-color: rgba(168, 127, 212, 0.35);
+    background: rgba(168, 127, 212, 0.06);
+  }
+  .service-icon { color: var(--accent); }
+  .service-card h3 { color: var(--text); font-weight: 600; }
+  .service-card p, .portfolio-body p { color: #a5a5bf; }
+
+  .portfolio { background: transparent; }
+  .portfolio-header { max-width: 1200px; margin-right: auto; margin-left: auto; }
+  .carousel-container { max-width: 1200px; margin: 0 auto; }
+  .carousel-track .portfolio-card {
+    min-width: 0;
+    flex-basis: calc((100% - 40px) / 3);
+    overflow: hidden;
+  }
+  .portfolio-card:hover {
+    border-color: rgba(212, 168, 83, 0.3);
+    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.28);
+  }
+  .portfolio-thumb { background-color: #111125; }
+  .portfolio-thumb img { transition: transform 0.5s ease; }
+  .portfolio-card:hover .portfolio-thumb img { transform: scale(1.035); }
+  .portfolio-body { padding: 22px; }
+  .portfolio-body h3 { color: var(--text); font-weight: 600; }
+  .ptag { color: #b8b8ce; border-radius: 5px; }
+  .portfolio-link { color: var(--accent2); }
+  .portfolio-cta { border-color: rgba(212, 168, 83, 0.24); }
+  .portfolio-cta strong { color: var(--accent); }
+
+  .contact-info-items { gap: 18px; }
+  .contact-icon {
+    border-color: var(--border);
+    border-radius: 10px;
+    color: var(--accent);
+  }
+  .contact-row, .contact-row a { color: #a5a5bf; }
+  .contact-row a:hover { color: var(--accent); }
+  .form-group label { color: #b8b8ce; }
+  .form-group input, .form-group textarea {
+    background: rgba(7, 7, 15, 0.72);
+    border-color: var(--border);
+    border-radius: 8px;
+  }
+  .form-group input:focus, .form-group textarea:focus { border-color: rgba(168, 127, 212, 0.55); }
+
+  .form-status {
+    margin-top: 2px;
+    padding: 12px 14px;
+    border: 1px solid;
+    border-radius: 8px;
+    font-size: 13px;
+    text-align: center;
+  }
+  .form-status.is-success {
+    color: #d2b9ee;
+    border-color: rgba(168, 127, 212, 0.35);
+    background: rgba(168, 127, 212, 0.08);
+  }
+  .form-status.is-error {
+    color: #f0b5b5;
+    border-color: rgba(220, 100, 100, 0.35);
+    background: rgba(220, 100, 100, 0.08);
+  }
+
+  footer {
+    padding: 28px clamp(20px, 5vw, 72px);
+    background: #07070f;
+  }
+  .social-link { border-radius: 9px; }
+  .social-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(168, 127, 212, 0.08);
+  }
+
+  .carousel-track {
+    width: max-content;
+    gap: 0;
+    transition: none;
+    transition: none;
+  }
+  .carousel-group {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 20px;
+    padding-right: 20px;
+  }
+  .carousel-track .portfolio-card {
+    flex: 0 0 clamp(260px, 31vw, 360px);
+    min-width: 0;
+  }
+  .carousel-container {
+    cursor: grab;
+    touch-action: pan-y;
+  }
+  .carousel-container.is-dragging {
+    cursor: grabbing;
+    user-select: none;
+  }
+  .carousel-container.is-dragging img { pointer-events: none; }
+
+  @media (max-width: 992px) {
+    .carousel-track .portfolio-card { flex-basis: calc((100% - 20px) / 2); }
+    .hero { padding-right: 7vw; padding-left: 7vw; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 12px 20px; }
+    .nav-links { padding-top: 8px; }
+    .hero {
+      padding: 132px 24px 72px;
+      background-size: 36px 36px;
+    }
+    .hero-content { max-width: 100%; }
+    .orb-container { width: min(70vw, 300px); right: auto; }
+    .hero-name { font-size: clamp(44px, 11vw, 68px); }
+    .skills-strip { justify-content: flex-start; }
+    .carousel-track .portfolio-card { flex-basis: min(78vw, 340px); }
+    .portfolio-header { margin-bottom: 24px; }
+  }
+
+  @media (max-width: 600px) {
+    .carousel-track .portfolio-card { flex-basis: min(78vw, 340px); }
+  }
+
+  @media (max-width: 400px) {
+    .hero { padding: 126px 18px 56px; }
+    section { padding-right: 18px; padding-left: 18px; }
+    .nav-logo { font-size: 13px; }
+    .nav-cta { font-size: 12px; }
+    .hero-btns > * { flex: 1 1 100%; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
     }
   }
 </style>
@@ -648,7 +992,7 @@ require __DIR__ . "/app/main.php";
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo"><img src="storage/syntech-logo.webp" alt="Profile Photo" class="Logo"> SYNTECH</div>
+  <div class="nav-logo"><img src="storage/syntech-logo.webp" alt="SynTech logo" class="Logo"> SYNTECH</div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
@@ -686,6 +1030,7 @@ require __DIR__ . "/app/main.php";
   <span class="skill-tag">Bootstrap</span>
   <span class="skill-tag">MySQL</span>
   <span class="skill-tag">WordPress</span>
+  <span class="skill-tag">Flutter</span>
 </div>
 
 <!-- ABOUT -->
@@ -750,13 +1095,9 @@ require __DIR__ . "/app/main.php";
       <div class="section-eyebrow">My Work</div>
       <h2 class="section-title">Featured Projects</h2>
     </div>
-    <div class="carousel-nav">
-      <button class="nav-btn" id="prevBtn" aria-label="Previous Project">&#8592;</button>
-      <button class="nav-btn" id="nextBtn" aria-label="Next Project">&#8594;</button>
-    </div>
   </div>
 
-  <div class="carousel-container" id="carouselContainer">
+  <div class="carousel-container" id="carouselContainer" role="region" aria-label="Featured projects carousel">
     <div class="carousel-track" id="carouselTrack">
 
       <div class="portfolio-card">
@@ -772,7 +1113,7 @@ require __DIR__ . "/app/main.php";
             <span class="ptag">XML</span>
           </div>
           <h3>FLAMES Matchmaker</h3>
-          <p>A cross-platform mobile application built with Flutter that reimagines the classic nostalgic game FLAMES (Friends, Lovers, Affection, Marriage, Enemies, Siblings) with a clean modern UI and real-time character matching algorithms.</p>
+          <p>A Flutter app that gives the classic FLAMES game a modern look with quick, interactive name matching.</p>
         </div>
       </div>
       <div class="portfolio-card">
@@ -784,7 +1125,7 @@ require __DIR__ . "/app/main.php";
             <span class="ptag">Wordpress</span>
           </div>
           <h3>RBC I.T Services Website</h3>
-          <p>The official corporate website for RBC IT Services, developed on WordPress. It serves as a professional business portal highlighting the company's core B2B solutions, including data annotation (image, video, and text), data collection, transcription, and offshore technical recruitment support. Built with a responsive, modern interface featuring a dynamic appointment scheduling module, interactive service showcases, and direct communication funnels to capture corporate leads and inquiries effectively.</p>
+          <p>A responsive WordPress site showcasing RBC’s IT services, with appointment booking and clear contact options for business clients.</p>
         </div>
       </div>
       <div class="portfolio-card">
@@ -798,7 +1139,7 @@ require __DIR__ . "/app/main.php";
             <span class="ptag">Bootstrap</span>
           </div>
           <h3>DENR Forestry Licensing Management System (eFLMS)</h3>
-          <p>An online web application designed to streamline the application, evaluation, and issuance of forestry permits and licenses. Built using PHP, Bootstrap, and SQL to ensure secure document tracking and efficient workflows for environmental regulatory compliance.</p>
+          <p>A PHP and MySQL system that manages forestry permit applications, reviews, and license tracking.</p>
         </div>
       </div>
       <div class="portfolio-card">
@@ -812,7 +1153,7 @@ require __DIR__ . "/app/main.php";
             <span class="ptag">Bootstrap</span>
           </div>
           <h3>Family Planning Management Information System (eFPMIS)</h3>
-          <p>A cloud-based healthcare platform that tracks family planning methods, patient consultations, and medical inventory. Utilizes a robust SQL database and a responsive PHP/Bootstrap frontend to provide healthcare workers with real-time analytics and patient tracking.</p>
+          <p>A healthcare system for tracking family planning consultations, methods, and medical supplies.</p>
         </div>
       </div>
       <div class="portfolio-card">
@@ -826,7 +1167,7 @@ require __DIR__ . "/app/main.php";
             <span class="ptag">Bootstrap</span>
           </div>
           <h3>Resident and Profiling Management Information System (eRPMIS)</h3>
-          <p>A comprehensive community management portal engineered to digitize local resident demographics, certification requests, and profiling data. Features a secure PHP backend and dynamic Bootstrap interface for fast data retrieval and seamless community profiling.</p>
+          <p>A community portal for managing resident profiles, demographics, and certificate requests.</p>
         </div>
       </div>
       <div class="portfolio-card">
@@ -840,7 +1181,7 @@ require __DIR__ . "/app/main.php";
             <span class="ptag">Bootstrap</span>
           </div>
           <h3>Rose Furniture Management System (eRFMS)</h3>
-          <p>An e-commerce and inventory management solution tailored for custom and retail furniture businesses. It integrates a secure SQL database for real-time stock monitoring with an intuitive PHP and Bootstrap web app for seamless customer ordering and sales tracking.</p>
+          <p>A furniture store system for managing product inventory, customer orders, and sales.</p>
         </div>
       </div>
       <div class="portfolio-card">
@@ -854,7 +1195,7 @@ require __DIR__ . "/app/main.php";
             <span class="ptag">Bootstrap</span>
           </div>
           <h3>Room and Equipment Booking Management System (eREBooking)</h3>
-          <p>A centralized online scheduling utility that automates facility reservations and equipment lending processes. Developed with PHP and SQL to handle conflict-free calendar booking and user notifications via a responsive Bootstrap frontend.</p>
+          <p>A booking system for reserving rooms and equipment, with scheduling to prevent conflicts.</p>
         </div>
       </div>
       <div class="portfolio-card">
@@ -870,7 +1211,7 @@ require __DIR__ . "/app/main.php";
             <span class="ptag">JavaScript</span>
           </div>
           <h3>Student Faculty Evaluation System</h3>
-          <p>The Student Faculty Evaluation System is a secure, local web-based application designed to automate and streamline the academic feedback process within an institutional network. Operating locally without requiring an internet connection, it allows students to submit anonymous performance evaluations, provides faculty with actionable teaching analytics, and gives administrators full control over evaluation management and institutional reporting..</p>
+          <p>A local evaluation system for anonymous student feedback, faculty insights, and administrative reporting.</p>
         </div>
       </div>
       <div class="portfolio-card">
@@ -884,7 +1225,7 @@ require __DIR__ . "/app/main.php";
             <span class="ptag">Bootstrap</span>
           </div>
           <h3>Library Management System</h3>
-          <p>A digital repository platform created to track book inventories, manage student loans, and calculate overdue penalties. Combines PHP logic and SQL relational tables to provide librarians and members with an automated, easy-to-navigate catalog search.</p>
+          <p>A library tool for cataloging books, tracking loans, and calculating overdue fees.</p>
         </div>
       </div>
       <div class="portfolio-card">
@@ -898,12 +1239,11 @@ require __DIR__ . "/app/main.php";
             <span class="ptag">Bootstrap</span>
           </div>
           <h3>Student Information Management System</h3>
-          <p>A dynamic portal tailored for student enrollment, grade monitoring, and academic record keeping. Employs PHP and a relational SQL database to safely process academic profiles and fetch student data instantly across school networks.</p>
+          <p>A student portal for enrollment, grades, and academic records, powered by PHP and MySQL.</p>
         </div>
       </div>
     </div>
   </div>
-  <div class="carousel-dots" id="carouselDots"></div>
 </section>
 
 <!-- CONTACT -->
@@ -942,6 +1282,11 @@ require __DIR__ . "/app/main.php";
         <textarea name="message" placeholder="Tell me about your project..." required></textarea>
       </div>
       <button type="submit" name="sent" class="form-submit">Send Message</button>
+      <?php if ($contactStatus !== ''): ?>
+        <p class="form-status is-<?= htmlspecialchars($contactStatusType, ENT_QUOTES, 'UTF-8') ?>" role="<?= $contactStatusType === 'success' ? 'status' : 'alert' ?>" aria-live="polite">
+          <?= htmlspecialchars($contactStatus, ENT_QUOTES, 'UTF-8') ?>
+        </p>
+      <?php endif; ?>
     </form>
   </div>
 </section>
@@ -959,117 +1304,90 @@ require __DIR__ . "/app/main.php";
 <script>
   const track = document.getElementById('carouselTrack');
   const container = document.getElementById('carouselContainer');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const dotsContainer = document.getElementById('carouselDots');
+  const originalCards = Array.from(track.children);
+  const group = document.createElement('div');
+  group.className = 'carousel-group';
+  group.setAttribute('role', 'list');
+  originalCards.forEach(card => {
+    card.setAttribute('role', 'listitem');
+    group.appendChild(card);
+  });
 
-  const cards = Array.from(track.children);
-  let currentIndex = 0;
-  let startX = 0;
+  const cloneGroup = group.cloneNode(true);
+  cloneGroup.setAttribute('aria-hidden', 'true');
+  cloneGroup.removeAttribute('role');
+  track.replaceChildren(group, cloneGroup);
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const speed = 36;
+  let groupWidth = 0;
+  let offset = 0;
+  let lastFrameTime = 0;
+  let isHovered = false;
+  let isFocused = false;
   let isDragging = false;
-  let currentTranslate = 0;
-  let prevTranslate = 0;
+  let dragStartX = 0;
+  let dragStartOffset = 0;
 
-  function getVisibleCards() {
-    if (window.innerWidth <= 600) return 1;
-    if (window.innerWidth <= 992) return 2;
-    return 3;
+  function applyOffset() {
+    track.style.transform = `translate3d(${-offset}px, 0, 0)`;
   }
 
-  function getMaxIndex() {
-    return Math.max(0, cards.length - getVisibleCards());
-  }
-
-  function createDots() {
-    dotsContainer.innerHTML = '';
-    const maxIdx = getMaxIndex();
-    for (let i = 0; i <= maxIdx; i++) {
-      const dot = document.createElement('div');
-      dot.classList.add('dot');
-      if (i === currentIndex) dot.classList.add('active');
-      dot.addEventListener('click', () => goToSlide(i));
-      dotsContainer.appendChild(dot);
+  function measureGroup() {
+    groupWidth = group.getBoundingClientRect().width;
+    if (groupWidth > 0) {
+      offset %= groupWidth;
+      applyOffset();
     }
   }
 
-  function updateDots() {
-    const dots = Array.from(dotsContainer.children);
-    dots.forEach((dot, idx) => {
-      dot.classList.toggle('active', idx === currentIndex);
-    });
+  function animate(time) {
+    if (lastFrameTime && !reducedMotion && !isHovered && !isFocused && !isDragging && groupWidth > 0) {
+      const elapsed = Math.min(time - lastFrameTime, 50);
+      offset = (offset + elapsed * speed / 1000) % groupWidth;
+      applyOffset();
+    }
+    lastFrameTime = time;
+    requestAnimationFrame(animate);
   }
 
-  function updateCarousel() {
-    const cardWidth = cards[0].getBoundingClientRect().width;
-    const gap = 20;
-    const offset = -(currentIndex * (cardWidth + gap));
-    track.style.transform = `translateX(${offset}px)`;
-    prevTranslate = offset;
-    updateDots();
-  }
-
-  function goToSlide(index) {
-    currentIndex = Math.min(Math.max(index, 0), getMaxIndex());
-    updateCarousel();
-  }
-
-  prevBtn.addEventListener('click', () => {
-    if (currentIndex > 0) goToSlide(currentIndex - 1);
-    else goToSlide(getMaxIndex());
+  container.addEventListener('pointerenter', () => { isHovered = true; });
+  container.addEventListener('pointerleave', () => { isHovered = false; });
+  container.addEventListener('focusin', () => { isFocused = true; });
+  container.addEventListener('focusout', event => {
+    if (!container.contains(event.relatedTarget)) isFocused = false;
   });
 
-  nextBtn.addEventListener('click', () => {
-    if (currentIndex < getMaxIndex()) goToSlide(currentIndex + 1);
-    else goToSlide(0);
-  });
-
-  // Touch & Drag Support
-  container.addEventListener('touchstart', touchStart);
-  container.addEventListener('touchend', touchEnd);
-  container.addEventListener('touchmove', touchMove);
-
-  container.addEventListener('mousedown', touchStart);
-  container.addEventListener('mouseup', touchEnd);
-  container.addEventListener('mouseleave', touchEnd);
-  container.addEventListener('mousemove', touchMove);
-
-  function touchStart(e) {
+  container.addEventListener('pointerdown', event => {
+    if (event.button !== 0) return;
     isDragging = true;
-    startX = getPositionX(e);
-    track.style.transition = 'none';
-  }
+    dragStartX = event.clientX;
+    dragStartOffset = offset;
+    container.classList.add('is-dragging');
+    container.setPointerCapture(event.pointerId);
+  });
 
-  function touchMove(e) {
-    if (!isDragging) return;
-    const currentPosition = getPositionX(e);
-    currentTranslate = prevTranslate + currentPosition - startX;
-    track.style.transform = `translateX(${currentTranslate}px)`;
-  }
+  container.addEventListener('pointermove', event => {
+    if (!isDragging || groupWidth === 0) return;
+    offset = ((dragStartOffset - (event.clientX - dragStartX)) % groupWidth + groupWidth) % groupWidth;
+    applyOffset();
+  });
 
-  function touchEnd() {
+  function stopDragging(event) {
     if (!isDragging) return;
     isDragging = false;
-    track.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
-    const movedBy = currentTranslate - prevTranslate;
-
-    if (movedBy < -50 && currentIndex < getMaxIndex()) currentIndex += 1;
-    if (movedBy > 50 && currentIndex > 0) currentIndex -= 1;
-
-    updateCarousel();
+    container.classList.remove('is-dragging');
+    if (container.hasPointerCapture(event.pointerId)) {
+      container.releasePointerCapture(event.pointerId);
+    }
   }
 
-  function getPositionX(e) {
-    return e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-  }
+  container.addEventListener('pointerup', stopDragging);
+  container.addEventListener('pointercancel', stopDragging);
+  window.addEventListener('resize', measureGroup);
 
-  window.addEventListener('resize', () => {
-    createDots();
-    goToSlide(Math.min(currentIndex, getMaxIndex()));
-  });
-
-  // Init
-  createDots();
-  updateCarousel();
+  measureGroup();
+  requestAnimationFrame(animate);
 </script>
 
 <script>
@@ -1079,20 +1397,63 @@ require __DIR__ . "/app/main.php";
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-  // Form submit
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.textContent = '✓ Message Sent!';
-    btn.style.background = 'linear-gradient(135deg, #1a7a4a, #0f5a35)';
-    btn.style.boxShadow = '0 0 24px rgba(30,200,100,0.35)';
-    setTimeout(() => {
-      btn.textContent = 'Send Message ✦';
-      btn.style.background = '';
-      btn.style.boxShadow = '';
-      e.target.reset();
-    }, 3000);
-  }
+  const contactForm = document.querySelector('.contact-form');
+  contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const submitButton = contactForm.querySelector('.form-submit');
+    const originalButtonText = submitButton.textContent;
+    const formData = new FormData(contactForm);
+    formData.append('sent', '1');
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
+    submitButton.setAttribute('aria-busy', 'true');
+
+    try {
+      const response = await fetch(contactForm.action || window.location.href, {
+        method: 'POST',
+        body: formData
+      });
+
+      if (!response.ok) {
+        throw new Error(`Contact form request failed with status ${response.status}.`);
+      }
+
+      const responseDocument = new DOMParser().parseFromString(await response.text(), 'text/html');
+      const newStatus = responseDocument.querySelector('.form-status');
+
+      if (!newStatus) {
+        throw new Error('The contact form response did not include a status message.');
+      }
+
+      const currentStatus = contactForm.querySelector('.form-status');
+      if (currentStatus) {
+        currentStatus.replaceWith(newStatus);
+      } else {
+        submitButton.insertAdjacentElement('afterend', newStatus);
+      }
+
+      if (newStatus.classList.contains('is-success')) {
+        contactForm.reset();
+      }
+    } catch (error) {
+      console.error('Contact form submission failed:', error);
+      let status = contactForm.querySelector('.form-status');
+      if (!status) {
+        status = document.createElement('p');
+        submitButton.insertAdjacentElement('afterend', status);
+      }
+      status.className = 'form-status is-error';
+      status.setAttribute('role', 'alert');
+      status.setAttribute('aria-live', 'polite');
+      status.textContent = 'Your message could not be sent. Please check your connection and try again.';
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = originalButtonText;
+      submitButton.removeAttribute('aria-busy');
+    }
+  });
 </script>
 </body>
 </html>
