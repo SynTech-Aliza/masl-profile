@@ -1103,7 +1103,8 @@
     box-shadow: 0 4px 20px rgba(35, 42, 62, 0.06);
   }
   html[data-theme="light"] .nav-logo img {
-    background: #20253a;
+    background: transparent;
+    filter: invert(1);
   }
   html[data-theme="light"] .nav-links a { color: var(--muted); }
   html[data-theme="light"] .nav-links a:hover { color: var(--accent); }
